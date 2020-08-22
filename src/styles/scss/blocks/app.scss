@@ -3,4 +3,37 @@
     flex-direction: column;
     align-items: center;
     color: green;
+    background-color: #222;
+}
+
+.title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 100;
+    font-size: 36px;
+    color: #ffffff;
+}
+
+.test {
+    font-family: 'TrebuchtMS', sans-serif;
+    font-size: 48px;
+    // color: #000000;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.test2 {
+    font-family: 'TrebuchtMS', sans-serif;
+    font-size: 16px;
+    // color: #666666;
+    font-weight: bold;
+    color: #ffffff;
+    // font-weight: bold;
+}
+
+.test3 {
+    font-family: 'TrebuchtMS', sans-serif;
+    font-size: 16px;
+    // color: #666666;
+    // font-weight: bold;
+    color: #ffffff;
 }
