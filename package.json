@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "webpack template",
   "main": "index.js",
+  "homepage": "https://sden4.github.io/funbox_test_work",
   "scripts": {
     "test": "test",
     "dev": "webpack-dev-server --open --config ./build/webpack.dev.config.js",
