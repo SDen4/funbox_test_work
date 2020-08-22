@@ -9,10 +9,10 @@ class App extends Component {
                 <h1 className="test">Нямушка</h1>
                 <h1 className="test2">Сказочное заморское яство</h1>
                 <h1 className="test3">Сказочное заморское яство</h1>
-                <img className="image" srcSet="assets/images/pic.jpg"></img>
+                {/* <img className="image" srcSet="assets/images/pic.jpg"></img> */}
             </div>
         );
     }
 };
 
-export default App; 
+export default App;

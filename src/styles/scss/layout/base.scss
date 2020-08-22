@@ -8,11 +8,12 @@ html {
 }
 
 body {
-  font-family: 'Exo 2', sans-serif;
+  font-family: $mainFont;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  background: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%), url("/assets/images/bgpattern.png");
 }
 
 .wrapper {
@@ -23,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   color: $default-color;
+
   @include tablet {
     color: $main-color;
   }
