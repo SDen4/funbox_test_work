@@ -12,7 +12,14 @@
     height: 480px;
     border-radius: 0 12px 12px 12px;
     position: relative;
-    background: linear-gradient(135deg,transparent 30px,$mainBlue 0) top left;
+    background: linear-gradient(135deg, transparent 30px, $mainBlue 0) top left;
+    cursor: pointer;
+    &:hover {
+        background: linear-gradient(135deg, transparent 30px, $mainBlueHover 0) top left;
+    }
+    &:hover .item__weight {
+        background-color: $mainBlueHover;
+    }
 }
 
 .item__main_container {
@@ -84,6 +91,7 @@
     border-radius: 50%;
     background-color: $mainBlue;
     color: $textColorWhite;
+    transition: .3s;
 }
 
 .item__weight_value {
@@ -110,4 +118,8 @@
 .item__bottom_link {
     color: $mainBlue;
     border-bottom: 1px dashed $mainBlue;
+    transition: .3s;
+    &:hover {
+        color: $mainBlueHover;
+    }
 }
