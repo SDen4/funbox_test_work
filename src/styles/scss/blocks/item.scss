@@ -13,6 +13,9 @@
     height: 480px;
     border-radius: 0 12px 12px 12px;
     position: relative;
+}
+
+.item__main_active {
     background: linear-gradient(135deg, transparent 30px, $mainBlue 0) top left;
     cursor: pointer;
     &:hover {
@@ -20,6 +23,28 @@
     }
     &:hover .item__weight {
         background-color: $mainBlueHover;
+    }
+}
+
+.item__main_out-of-stock {
+    background: linear-gradient(135deg, transparent 30px, $itemBGColorOutOfStock 0) top left;
+    cursor: unset;
+}
+
+.item__main_choosen {
+    background: linear-gradient(135deg, transparent 30px, $itemBGColorChoosen 0) top left;
+    &:hover {
+        background: linear-gradient(135deg, transparent 30px, $itemBGColorChoosenHover 0) top left;
+    }
+    &:hover .item__weight {
+        background-color: $itemBGColorChoosenHover;
+    }
+    &:hover .item__upper-subtitle_choosen {
+        display: block;
+        color: $textColorUpperSubtitleChoosen;
+    }
+    &:hover .item__upper-subtitle {
+        display: none;
     }
 }
 
@@ -31,8 +56,32 @@
     bottom: 4px;
     left:4px;
     border-radius: inherit;
-    background: linear-gradient(135deg,transparent 29px,$itemBackground 0) top left;
+    background: linear-gradient(135deg,transparent 29px,$itemBGColor 0) top left;
     overflow: hidden;
+}
+
+.item__main_container_out-of-stock {
+    display: block;
+    position: absolute;
+    top:4px;
+    right: 4px;
+    bottom: 4px;
+    left:4px;
+    border-radius: inherit;
+    background: linear-gradient(135deg,transparent 29px,$itemBGColor 0) top left;
+    overflow: hidden;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: inherit;
+        height: inherit;
+        background: linear-gradient(135deg,transparent 29px,rgba($color: #fff, $alpha: .5) 0) top left;
+    }
 }
 
 .item__content {
@@ -42,6 +91,11 @@
 .item__upper-subtitle {
     color: $textColorSemiBlack;
     margin-bottom: 6px;
+}
+
+.item__upper-subtitle_choosen {
+    margin-bottom: 6px;
+    display: none;
 }
 
 .subtitle {
@@ -62,15 +116,11 @@
     font-size: 14px;
     line-height: 16px;
     color: $textColorSemiBlack;
+}
+
+.item__description_value {
+    margin-right: 3px;
     font-weight: bold;
-}
-
-.item__present_value {
-    margin-right: 3px;
-}
-
-.item__portion_value {
-    margin-right: 3px;
 }
 
 .item__picture_wrapper {
@@ -99,6 +149,14 @@
     transition: .3s;
 }
 
+.item__weight_out-of-stock {
+    background-color: $itemBGColorOutOfStock;
+}
+
+.item__weight_choosen {
+    background-color: $itemBGColorChoosen;
+}
+
 .item__weight_value {
     font-size: 42px;
     line-height: 44px;
@@ -117,13 +175,17 @@
 .item__bottom_text {
     line-height: 16px;
     color: $textColorWhite;
-    margin-right: 3px;
+}
+
+.item__bottom_text_out-of-stock {
+    color: $testColorBottomOutOfStock;
 }
 
 .item__bottom_link {
     color: $mainBlue;
     border-bottom: 1px dashed $mainBlue;
     transition: .3s;
+    margin-left: 3px;
     &:hover {
         color: $mainBlueHover;
     }

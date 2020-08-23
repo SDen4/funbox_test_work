@@ -2,14 +2,19 @@
     $mainBlue: #1698d9;
     $mainBlueHover: #2ea8e6;
 
-    $itemBackground: #f2f2f2;
-    
-    $pageBackgroundColor: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
-    $pageBackgroundPattern: url("https://sden4.github.io/funbox_test_work/assets/images/bgpattern.png");
+    $itemBGColor: #f2f2f2;
+    $itemBGColorOutOfStock: #b3b3b3;
+    $itemBGColorChoosen: #d91667;
+    $itemBGColorChoosenHover: #e62e7a;
+
+    $pageBGColor: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
+    $pageBGPattern: url("https://sden4.github.io/funbox_test_work/assets/images/bgpattern.png");
 
     $textColorWhite: #fff;
     $textColorBlack: #000;
     $textColorSemiBlack: #666;
+    $testColorBottomOutOfStock: #ffff66;
+    $textColorUpperSubtitleChoosen: #e62e7a;
 
 //fonts
     $mainFont: 'TrebuchtMS', sans-serif;

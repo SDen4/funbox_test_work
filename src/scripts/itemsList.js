@@ -6,6 +6,7 @@ export default [
         portions: 10,
         presentQuantity: "",
         presentText: "мышь в подарок",
+        other: "",
         weight: "0,5",
         description: "Печень утки разварная с артишоками.",
         stock: true
@@ -16,6 +17,7 @@ export default [
         portions: 40,
         presentQuantity: "2",
         presentText: "мыши в подарок",
+        other: "",
         weight: "2",
         description: "Головы щучьи с чесноком да свежайшая сёмгушка.",
         stock: true
@@ -26,6 +28,7 @@ export default [
         portions: 100,
         presentQuantity: "5",
         presentText: "мышей в подарок",
+        other: "заказчик доволен",
         weight: "5",
         description: "Филе из цыплят с трюфелями в бульоне.",
         stock: false
