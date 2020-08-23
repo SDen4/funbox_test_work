@@ -1,0 +1,113 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    height: 510px;
+}
+
+.item__main {
+    width: 320px;
+    height: 480px;
+    border-radius: 0 12px 12px 12px;
+    position: relative;
+    background: linear-gradient(135deg,transparent 30px,$mainBlue 0) top left;
+}
+
+.item__main_container {
+    display: block;
+    position: absolute;
+    top:4px;
+    right: 4px;
+    bottom: 4px;
+    left:4px;
+    border-radius: inherit;
+    background: linear-gradient(135deg,transparent 29px,$itemBackground 0) top left;
+    overflow: hidden;
+}
+
+.item__content {
+    margin: 16px 0 0 44px;
+}
+
+.item__upper-subtitle {
+    color: $textColorSemiBlack;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 48px;
+    color: $textColorBlack;
+    font-weight: bold;
+}
+
+.subtitle__sort {
+    font-size: 24px;
+    color: $textColorBlack;
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+.item__description {
+    display: flex;
+    font-size: 14px;
+    line-height: 16px;
+    color: $textColorSemiBlack;
+    font-weight: bold;
+}
+
+.item__portion_value {
+    margin-right: 3px;
+}
+
+.item__picture_wrapper {
+    position: absolute;
+    top: 202px;
+    left: -28px;
+}
+
+.item__picture {
+    max-width: 110%;
+}
+
+.item__weight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: $mainBlue;
+    color: $textColorWhite;
+}
+
+.item__weight_value {
+    font-size: 42px;
+    line-height: 44px;
+}
+
+.item__weight_text {
+    font-size: 22px;
+    line-height: 16px;
+}
+
+.item__bottom {
+    display: flex;
+    font-size: 13px;
+}
+
+.item__bottom_text {
+    line-height: 16px;
+    color: $textColorWhite;
+    margin-right: 3px;
+}
+
+.item__bottom_link {
+    color: $mainBlue;
+    border-bottom: 1px dashed $mainBlue;
+}
