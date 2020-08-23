@@ -4,7 +4,7 @@ import items from "../scripts/itemsList";
 
 class App extends Component {
     render() {
-        let itemsList = items.map( function (item) {
+        let itemsList = items.map( item => {
             return <li key={item.id}> <Item item={item} /> </li>
         });
         return (

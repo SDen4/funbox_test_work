@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
 
 class Item extends Component {
+    constructor(props){
+        super(props);
+        this.chooseItem = this.chooseItem.bind(this);
+    }
+    state = {
+        choosen: false
+    }
     render() {
         const {item} = this.props;
         return (
             <div className="item">
-                <div className="item__main">
+                <div className="item__main" onClick={this.chooseItem}>
                     <div className="item__main_container">
                         <div className="item__content">
                             <div className="item__upper-subtitle">Сказочное заморское яство</div>
@@ -38,6 +45,13 @@ class Item extends Component {
                 </div>
             </div>
         );
+    }
+    chooseItem() {
+        // console.log('click by item!');
+        this.setState({
+            choosen: !this.state.choosen
+        });
+        console.log(this.state.choosen);
     }
 };
 
