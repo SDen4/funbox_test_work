@@ -8,12 +8,15 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: $mainFont;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  background: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%), url("https://sden4.github.io/funbox_test_work/assets/images/bgpattern.png");
+  background: $pageBackgroundColor, $pageBackgroundPattern;
 }
 
 button {
