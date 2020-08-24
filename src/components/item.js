@@ -16,35 +16,42 @@ class Item extends Component {
     render() {
         const {item} = this.props;
 
-        //states of bottom text
+        //vars of bottom text
         const unchoosen = !this.state.choosen && this.state.stock && 
-                <div className="item__bottom_text">Чего сидишь? Порадуй котэ,
-                    <a className="item__bottom_link" onClick={this.chooseItem}>купи.</a>
-                </div>;
-        const outOfStock = !this.state.stock && 
-                <div className="item__bottom_text item__bottom_text_out-of-stock">Печалька, {item.sort} закончился.
-                </div>;
-        const choosen = this.state.choosen && 
-                <div className="item__bottom_text">{item.description}
+                <div className="item__bottom_text">
+                    Чего сидишь? Порадуй котэ,
+                    <a className="item__bottom_link" onClick={this.chooseItem}>
+                        купи.
+                    </a>
                 </div>;
 
-        // states of upper subtitle
-        const upperSubtitle = <div className="item__upper-subtitle">Сказочное заморское яство</div>;
+        const outOfStock = !this.state.stock && 
+                <div className="item__bottom_text item__bottom_text_out-of-stock">
+                    Печалька, {item.sort} закончился.
+                </div>;
+
+        const choosen = this.state.choosen && 
+                <div className="item__bottom_text">
+                    {item.description}
+                </div>;
+
+        //vars of upper subtitle
+        const upperSubtitle =
+                <div className="item__upper-subtitle">
+                    Сказочное заморское яство
+                </div>;
+
         const upperSubtitleChoosen = this.state.choosen && 
-                <div className="item__upper-subtitle_choosen">Котэ не одобряет?
+                <div className="item__upper-subtitle_choosen">
+                    Котэ не одобряет?
                 </div>;
 
         return (
             <div className="item">
-                <div 
-                    onClick={this.chooseItem}
-                    className={`${this.state.choosen && "item__main_choosen"} 
-                                ${!this.state.stock ? "item__main_out-of-stock" : "item__main_active"} 
-                                ${"item__main"}`}
+                <div onClick={this.chooseItem}
+                    className={`${this.state.choosen && "item__main_choosen"} ${!this.state.stock ? "item__main_out-of-stock" : "item__main_active"} ${"item__main"}`}
                 >
-                    <div 
-                        className={`${!this.state.stock ? "item__main_container_out-of-stock" : "item__main_container"}`}
-                    >
+                    <div className={`${!this.state.stock ? "item__main_container_out-of-stock" : "item__main_container"}`}>
                         <div className="item__content">
                             {upperSubtitle}
                             {upperSubtitleChoosen}
@@ -65,11 +72,7 @@ class Item extends Component {
                         <div className="item__picture_wrapper">
                             <img className="item__picture" src="assets/images/cat.png"></img>
                         </div>
-                        <div
-                            className={`${this.state.choosen && "item__weight_choosen"} 
-                                        ${!this.state.stock && "item__weight_out-of-stock"} 
-                                        ${"item__weight"}`}
-                        >
+                        <div className={`${this.state.choosen && "item__weight_choosen"} ${!this.state.stock && "item__weight_out-of-stock"} ${"item__weight"}`}>
                             <div className="item__weight_value">{item.weight}</div>
                             <span className="item__weight_text">кг</span>
                         </div>

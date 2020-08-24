@@ -4,27 +4,14 @@
     justify-content: space-between;
     align-items: center;
     width: 320px;
-    height: 510px;
     margin: 0 40px 40px;
-
-    &:last-child {
-        margin: 0 40px 20px;
-    }
 
     @include additional {
         margin: 0 25px 40px;
-
-        &:last-child {
-            margin: 0 25px 20px;
-        }
     }
 
     @include smartphone {
         margin: 0 0 30px;
-
-        &:last-child {
-            margin: 0 0 20px;
-        }
     }
 }
 
@@ -33,6 +20,7 @@
     height: 480px;
     border-radius: 0 12px 12px 12px;
     position: relative;
+    margin-bottom: 15px;
     -webkit-tap-highlight-color: transparent; // delete blue mark of tap in mobile version
 }
 
@@ -113,6 +101,8 @@
 }
 
 .item__content {
+    position: relative;
+    z-index: 10;
     margin: 16px 0 0 44px;
 }
 
@@ -203,6 +193,7 @@
 .item__bottom_text {
     line-height: 16px;
     color: $textColorWhite;
+    text-align: center;
 }
 
 .item__bottom_text_out-of-stock {
