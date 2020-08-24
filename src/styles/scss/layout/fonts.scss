@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'TrebuchtMS';
-    src: url('/assets/fonts/TrebuchetMS.woff2') format('woff2'),
-        url('/assets/fonts/TrebuchetMS.woff') format('woff');
+    src: url('https://sden4.github.io/funbox_test_work/assets/fonts/TrebuchetMS.woff2') format('woff2'), // path for correct display on github pages
+        url('https://sden4.github.io/funbox_test_work/assets/fonts/TrebuchetMS.woff') format('woff'); // path for correct display on github pages
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'TrebuchtMS';
-    src: url('/assets/fonts/TrebuchetMS-Bold.woff2') format('woff2'),
-        url('/assets/fonts/TrebuchetMS-Bold.woff') format('woff');
+    src: url('https://sden4.github.io/funbox_test_work/assets/fonts/TrebuchetMS-Bold.woff2') format('woff2'), // path for correct display on github pages
+        url('https://sden4.github.io/funbox_test_work/assets/fonts/TrebuchetMS-Bold.woff') format('woff'); // path for correct display on github pages
     font-weight: bold;
     font-style: normal;
 }
