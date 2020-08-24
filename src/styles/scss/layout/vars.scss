@@ -8,7 +8,7 @@
     $itemBGColorChoosenHover: #e62e7a;
 
     $pageBGColor: linear-gradient(0deg, #000000 0%, rgba(0,0,0,0) 50%, #000000 100%);
-    $pageBGPattern: url("https://sden4.github.io/funbox_test_work/assets/images/BGimage.png"); // path for correct display on github pages
+    $pageBGPattern: url("https://sden4.github.io/funbox_test_work/assets/images/bgpattern.png"); // path for correct display on github pages
 
     $textColorWhite: #fff;
     $textColorBlack: #000;
@@ -20,9 +20,13 @@
     $mainFont: 'TrebuchtMS', sans-serif;
     $titleFont: 'Exo 2', sans-serif;
 
+//animation's duration
+    $animationDuration: .3s;
+
 //resolutions
     $desktop: 1280px;
     $laptop: 980px;
+    $additional: 820px;
     $tablet: 768px;
     $smartphone: 480px;
     $phone: 320px;

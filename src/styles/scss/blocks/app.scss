@@ -10,8 +10,11 @@
     font-size: 36px;
     color: $textColorWhite;
     margin-bottom: 22px;
+    text-align: center;
 }
 
 .main {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

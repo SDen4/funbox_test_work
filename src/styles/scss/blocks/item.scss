@@ -5,7 +5,27 @@
     align-items: center;
     width: 320px;
     height: 510px;
-    margin: 0 40px;
+    margin: 0 40px 40px;
+
+    &:last-child {
+        margin: 0 40px 20px;
+    }
+
+    @include additional {
+        margin: 0 25px 40px;
+
+        &:last-child {
+            margin: 0 25px 20px;
+        }
+    }
+
+    @include smartphone {
+        margin: 0 0 30px;
+
+        &:last-child {
+            margin: 0 0 20px;
+        }
+    }
 }
 
 .item__main {
@@ -18,9 +38,11 @@
 .item__main_active {
     background: linear-gradient(135deg, transparent 30px, $mainBlue 0) top left;
     cursor: pointer;
+
     &:hover {
         background: linear-gradient(135deg, transparent 30px, $mainBlueHover 0) top left;
     }
+
     &:hover .item__weight {
         background-color: $mainBlueHover;
     }
@@ -33,16 +55,20 @@
 
 .item__main_choosen {
     background: linear-gradient(135deg, transparent 30px, $itemBGColorChoosen 0) top left;
+
     &:hover {
         background: linear-gradient(135deg, transparent 30px, $itemBGColorChoosenHover 0) top left;
     }
+
     &:hover .item__weight {
         background-color: $itemBGColorChoosenHover;
     }
+
     &:hover .item__upper-subtitle_choosen {
         display: block;
         color: $textColorUpperSubtitleChoosen;
     }
+
     &:hover .item__upper-subtitle {
         display: none;
     }
@@ -51,25 +77,26 @@
 .item__main_container {
     display: block;
     position: absolute;
-    top:4px;
+    top: 4px;
     right: 4px;
     bottom: 4px;
-    left:4px;
+    left: 4px;
     border-radius: inherit;
-    background: linear-gradient(135deg,transparent 29px,$itemBGColor 0) top left;
+    background: linear-gradient(135deg, transparent 29px, $itemBGColor 0) top left;
     overflow: hidden;
 }
 
 .item__main_container_out-of-stock {
     display: block;
     position: absolute;
-    top:4px;
+    top: 4px;
     right: 4px;
     bottom: 4px;
-    left:4px;
+    left: 4px;
     border-radius: inherit;
-    background: linear-gradient(135deg,transparent 29px,$itemBGColor 0) top left;
+    background: linear-gradient(135deg, transparent 29px, $itemBGColor 0) top left;
     overflow: hidden;
+
     &:after {
         content: "";
         display: block;
@@ -80,7 +107,7 @@
         right: 0;
         width: inherit;
         height: inherit;
-        background: linear-gradient(135deg,transparent 29px,rgba($color: #fff, $alpha: .5) 0) top left;
+        background: linear-gradient(135deg, transparent 29px, rgba($color: #fff, $alpha: .5) 0) top left;
     }
 }
 
@@ -146,7 +173,7 @@
     border-radius: 50%;
     background-color: $mainBlue;
     color: $textColorWhite;
-    transition: .3s;
+    transition: $animationDuration;
 }
 
 .item__weight_out-of-stock {
@@ -184,8 +211,9 @@
 .item__bottom_link {
     color: $mainBlue;
     border-bottom: 1px dashed $mainBlue;
-    transition: .3s;
+    transition: $animationDuration;
     margin-left: 3px;
+
     &:hover {
         color: $mainBlueHover;
     }
