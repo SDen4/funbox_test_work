@@ -33,6 +33,7 @@
     height: 480px;
     border-radius: 0 12px 12px 12px;
     position: relative;
+    -webkit-tap-highlight-color: transparent; // delete blue mark of tap in mobile version
 }
 
 .item__main_active {
