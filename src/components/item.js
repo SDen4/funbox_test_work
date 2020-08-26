@@ -3,15 +3,18 @@ import React, {Component} from 'react';
 class Item extends Component {
     constructor(props){
         super(props);
-        this.chooseItem = this.chooseItem.bind(this);
         this.checkStock = this.checkStock.bind(this);
+        this.mouseLeave = this.mouseLeave.bind(this);
+        this.chooseItem = this.chooseItem.bind(this);
+        this.chooseItemFromLink = this.chooseItemFromLink.bind(this);
     }
     state = {
-        choosen: false, // choosen item
-        stock: true // item is on the stock
+        stock: true, //item is on the stock
+        choosen: false, //choosen item
+        mouse: false //flag for hover effect
     }
     componentDidMount() {
-        this.checkStock(); // check the stock of items
+        this.checkStock(); //check the stock of items
     }
     render() {
         const {item} = this.props;
@@ -20,43 +23,41 @@ class Item extends Component {
         const unchoosen = !this.state.choosen && this.state.stock && 
                 <div className="item__bottom_text">
                     Чего сидишь? Порадуй котэ,
-                    <a className="item__bottom_link" onClick={this.chooseItem}>
+                    <a className="item__bottom_link" onClick={this.chooseItemFromLink}>
                         купи.
                     </a>
                 </div>;
-
         const outOfStock = !this.state.stock && 
                 <div className="item__bottom_text item__bottom_text_out-of-stock">
                     Печалька, {item.sort} закончился.
                 </div>;
-
         const choosen = this.state.choosen && 
                 <div className="item__bottom_text">
                     {item.description}
                 </div>;
 
         //vars of upper subtitle
-        const upperSubtitle =
-                <div className="item__upper-subtitle">
+        const upperSubtitle = 
+                <div className={`${!this.state.mouse && "item__upper-subtitle_hard"} ${"item__upper-subtitle"}`}>
                     Сказочное заморское яство
                 </div>;
-
         const upperSubtitleChoosen = this.state.choosen && 
-                <div className="item__upper-subtitle_choosen">
+                <div className={`${!this.state.mouse && "item__upper-subtitle_choosen_hard"} ${"item__upper-subtitle_choosen"}`}>
                     Котэ не одобряет?
                 </div>;
 
         return (
-            <div className="item">
+            <li className="item">
                 <div onClick={this.chooseItem}
+                    onMouseLeave={this.mouseLeave}
                     className={`${this.state.choosen && "item__main_choosen"} ${!this.state.stock ? "item__main_out-of-stock" : "item__main_active"} ${"item__main"}`}
                 >
                     <div className={`${!this.state.stock ? "item__main_container_out-of-stock" : "item__main_container"}`}>
                         <div className="item__content">
                             {upperSubtitle}
                             {upperSubtitleChoosen}
-                            <h2 className="subtitle">{item.brand}</h2>
-                            <div className="subtitle__sort">{item.sort}</div>
+                            <h2 className="item__subtitle">{item.brand}</h2>
+                            <div className="item__subtitle_sort">{item.sort}</div>
                             <div className="item__description">
                                 <div className="item__description_value">{item.portions}</div>
                                 <span className="item__description_text">порций</span>
@@ -70,7 +71,7 @@ class Item extends Component {
                             </div>
                         </div>
                         <div className="item__picture_wrapper">
-                            <img className="item__picture" src="assets/images/cat.png"></img>
+                            <img className="item__picture" src="assets/images/cat2.png"></img>
                         </div>
                         <div className={`${this.state.choosen && "item__weight_choosen"} ${!this.state.stock && "item__weight_out-of-stock"} ${"item__weight"}`}>
                             <div className="item__weight_value">{item.weight}</div>
@@ -83,21 +84,33 @@ class Item extends Component {
                     {outOfStock}
                     {choosen}
                 </div>
-            </div>
+            </li>
         );
-    }
-    chooseItem() {
-        // change the status only if item on the stock
-        if(this.state.stock) {
-            this.setState({
-                choosen: !this.state.choosen
-            });
-        }
     }
     checkStock() {
         this.setState({
             stock: this.props.item.stock
         })
+    }
+    chooseItem() {
+        if(!this.state.stock) return;
+        this.setState({
+            choosen: !this.state.choosen,
+            mouse: false
+        });
+    }
+    chooseItemFromLink() {
+        if(!this.state.stock) return;
+        this.setState({
+            choosen: !this.state.choosen,
+            mouse: true
+        })
+    }
+    mouseLeave() {
+        if(!this.state.stock) return;
+        this.setState({
+            mouse: true
+        });
     }
 };
 

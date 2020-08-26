@@ -7,12 +7,13 @@ class App extends Component {
         let itemsList = items.map( item => {
             return <Item item={item} li key={item.id} />
         });
+        
         return (
             <div className="app">
                 <h1 className="title">Ты сегодня покормил кота?</h1>
-                <div className="main">
+                <ul className="main__list">
                     {itemsList}
-                </div>
+                </ul>
             </div>
         );
     }

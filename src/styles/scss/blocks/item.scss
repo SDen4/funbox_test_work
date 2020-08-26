@@ -16,30 +16,30 @@
 }
 
 .item__main {
+    position: relative;
     width: 320px;
     height: 480px;
     border-radius: 0 12px 12px 12px;
-    position: relative;
     margin-bottom: 15px;
-    -webkit-tap-highlight-color: transparent; // delete blue mark of tap in mobile version
+    -webkit-tap-highlight-color: transparent; // delete mark of tap in mobile version
 }
 
 .item__main_active {
-    background: linear-gradient(135deg, transparent 30px, $mainBlue 0) top left;
     cursor: pointer;
+    background: linear-gradient(135deg, transparent 30px, $mainBlue 0) top left;
 
     &:hover {
         background: linear-gradient(135deg, transparent 30px, $mainBlueHover 0) top left;
-    }
 
-    &:hover .item__weight {
-        background-color: $mainBlueHover;
+        .item__weight {
+            background-color: $mainBlueHover;
+        }
     }
 }
 
 .item__main_out-of-stock {
-    background: linear-gradient(135deg, transparent 30px, $itemBGColorOutOfStock 0) top left;
     cursor: unset;
+    background: linear-gradient(135deg, transparent 30px, $itemBGColorOutOfStock 0) top left;
 }
 
 .item__main_choosen {
@@ -47,19 +47,19 @@
 
     &:hover {
         background: linear-gradient(135deg, transparent 30px, $itemBGColorChoosenHover 0) top left;
-    }
 
-    &:hover .item__weight {
-        background-color: $itemBGColorChoosenHover;
-    }
+        .item__weight {
+            background-color: $itemBGColorChoosenHover;
+        }
 
-    &:hover .item__upper-subtitle_choosen {
-        display: block;
-        color: $textColorUpperSubtitleChoosen;
-    }
+        .item__upper-subtitle {
+            display: none;
+        }
 
-    &:hover .item__upper-subtitle {
-        display: none;
+        .item__upper-subtitle_choosen {
+            display: block;
+            color: $textColorUpperSubtitleChoosen;
+        }
     }
 }
 
@@ -71,8 +71,8 @@
     bottom: 4px;
     left: 4px;
     border-radius: inherit;
-    background: linear-gradient(135deg, transparent 29px, $itemBGColor 0) top left;
     overflow: hidden;
+    background: linear-gradient(135deg, transparent 29px, $itemBGColor 0) top left;
 }
 
 .item__main_container_out-of-stock {
@@ -83,8 +83,8 @@
     bottom: 4px;
     left: 4px;
     border-radius: inherit;
-    background: linear-gradient(135deg, transparent 29px, $itemBGColor 0) top left;
     overflow: hidden;
+    background: linear-gradient(135deg, transparent 29px, $itemBGColor 0) top left;
 
     &:after {
         content: "";
@@ -106,27 +106,38 @@
     margin: 16px 0 0 44px;
 }
 
-.item__upper-subtitle {
-    color: $textColorSemiBlack;
-    margin-bottom: 6px;
-}
-
-.item__upper-subtitle_choosen {
-    margin-bottom: 6px;
-    display: none;
-}
-
-.subtitle {
+.item__subtitle {
     font-size: 48px;
     color: $textColorBlack;
     font-weight: bold;
 }
 
-.subtitle__sort {
+.item__subtitle_sort {
     font-size: 24px;
     color: $textColorBlack;
     font-weight: bold;
     margin-bottom: 13px;
+}
+
+.item__upper-subtitle {
+    display: block;
+    margin-bottom: 6px;
+    color: $textColorSemiBlack;
+}
+
+.item__upper-subtitle_choosen {
+    display: none;
+    margin-bottom: 6px;
+}
+
+//class for hover effect
+.item__upper-subtitle_hard {
+    display: block !important;
+}
+
+//class for hover effect
+.item__upper-subtitle_choosen_hard {
+    display: none !important;
 }
 
 .item__description {
@@ -143,12 +154,13 @@
 
 .item__picture_wrapper {
     position: absolute;
-    top: 202px;
-    left: -28px;
+    top: 205px;
+    left: -26px;
 }
 
 .item__picture {
-    max-width: 110%;
+    width: 115%;
+    height: 115%;
 }
 
 .item__weight {
@@ -162,9 +174,9 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: $mainBlue;
-    color: $textColorWhite;
     transition: $animationDuration;
+    color: $textColorWhite;
+    background-color: $mainBlue;
 }
 
 .item__weight_out-of-stock {
@@ -192,8 +204,8 @@
 
 .item__bottom_text {
     line-height: 16px;
-    color: $textColorWhite;
     text-align: center;
+    color: $textColorWhite;
 }
 
 .item__bottom_text_out-of-stock {
@@ -201,10 +213,10 @@
 }
 
 .item__bottom_link {
-    color: $mainBlue;
     border-bottom: 1px dashed $mainBlue;
     transition: $animationDuration;
     margin-left: 3px;
+    color: $mainBlue;
 
     &:hover {
         color: $mainBlueHover;
