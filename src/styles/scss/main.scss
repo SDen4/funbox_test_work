@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300&display=swap');
+
 @import "./layout/fonts.scss";
 @import "./layout/vars.scss";
 @import "./layout/mixins.scss";
@@ -7,7 +7,3 @@
 
 @import "./blocks/app.scss";
 @import "./blocks/item.scss";
-
-//- github pages -//
-//- git add dist && git commit -m "Initial dist subtree commit"
-//- git subtree push --prefix dist origin gh-pages

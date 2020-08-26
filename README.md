@@ -1,12 +1,14 @@
-## FunBox test work
+## FunBox test work (level II)
 ### by Denis Skryabin
 ### for Junior Frontend Developer (HTML/CSS/JS)
 
-###  Template:
+### Watch on [github-pages](https://sden4.github.io/funbox_test_work/)
+
+###  Stack:
 ```sh
-react
-pug
+html
 scss
+react
 ```
 
 ###  Run development mode:
@@ -17,4 +19,6 @@ $ npm i
 $ npm run dev
 ```
 
-### Watch on [github-pages](https://sden4.github.io/funbox_test_work/)
+<!-- github pages -->
+<!-- git add dist && git commit -m "Initial dist subtree commit" -->
+<!-- git subtree push --prefix dist origin gh-pages -->

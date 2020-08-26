@@ -6,7 +6,6 @@ class Item extends Component {
         this.checkStock = this.checkStock.bind(this);
         this.mouseLeave = this.mouseLeave.bind(this);
         this.chooseItem = this.chooseItem.bind(this);
-        this.chooseItemFromLink = this.chooseItemFromLink.bind(this);
     }
     state = {
         stock: true, //item is on the stock
@@ -23,7 +22,7 @@ class Item extends Component {
         const unchoosen = !this.state.choosen && this.state.stock && 
                 <div className="item__bottom_text">
                     Чего сидишь? Порадуй котэ,
-                    <a className="item__bottom_link" onClick={this.chooseItemFromLink}>
+                    <a className="item__bottom_link" onClick={this.chooseItem.bind(this, "link")}>
                         купи.
                     </a>
                 </div>;
@@ -92,19 +91,20 @@ class Item extends Component {
             stock: this.props.item.stock
         })
     }
-    chooseItem() {
-        if(!this.state.stock) return;
-        this.setState({
-            choosen: !this.state.choosen,
-            mouse: false
-        });
-    }
-    chooseItemFromLink() {
-        if(!this.state.stock) return;
-        this.setState({
-            choosen: !this.state.choosen,
-            mouse: true
-        })
+    chooseItem(e) {
+        if(!this.state.stock) return; //choose only stock items
+        //choose by link in the bottom of item
+        if( e === 'link') {
+            this.setState({
+                choosen: !this.state.choosen,
+                mouse: true
+            })
+        } else {
+            this.setState({
+                choosen: !this.state.choosen,
+                mouse: false
+            });
+        }
     }
     mouseLeave() {
         if(!this.state.stock) return;
