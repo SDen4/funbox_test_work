@@ -70,7 +70,7 @@ class Item extends Component {
                             </div>
                         </div>
                         <div className="item__picture_wrapper">
-                            <img className="item__picture" src="assets/images/cat2.png"></img>
+                            <img className="item__picture" src="assets/images/cat3.png"></img>
                         </div>
                         <div className={`${this.state.choosen && "item__weight_choosen"} ${!this.state.stock && "item__weight_out-of-stock"} ${"item__weight"}`}>
                             <div className="item__weight_value">{item.weight}</div>
